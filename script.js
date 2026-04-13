@@ -1,15 +1,19 @@
 function volume_sphere() {
     //Write your code here
-  let rad=document.getElementById('radius').value;
-	let volout=document.getElementById('volume');
-	const r=parseFloat(rad);
-	 if (isNaN(r) || r < 0) {
+  if (event) event.preventDefault();
+
+  const radiusInput = document.getElementById('radius').value;
+  const volumeOutput = document.getElementById('volume');
+
+  const r = parseFloat(radiusInput);
+
+  if (isNaN(r) || r < 0) {
     volumeOutput.value = 'NaN';
-	 }
-	else{
-   let vol=(4 / 3) * Math.PI * Math.pow(r, 3);
-		volout.value=vol.toFixed(4);
-	}
+  } else {
+    const volume = (4 / 3) * Math.PI * Math.pow(r, 3);
+
+    volumeOutput.value = volume.toFixed(4);
+  }
 	
 } 
 
